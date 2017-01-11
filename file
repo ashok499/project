@@ -1,0 +1,60 @@
+package demo;
+import java.util.Date;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.Scanner; 
+public class file2  {
+	 	public static void main(String args[]) 
+   	{    
+	       Date date = new Date();
+	       Scanner sc=new Scanner(System.in);
+	      	int n,i;
+	       System.out.println("Enter the value of n");
+	     	n=sc.nextInt();
+	     	int rol[]=new int[n];
+	       
+	     	String str[]=new String[n];
+	       FileWriter fw;
+   	BufferedWriter bw; 
+   	PrintWriter pw; 
+   	try { 
+   	
+     //str[i]=sc.nextLine();
+    
+   	fw = new FileWriter("D:/ashok8.txt",true); 
+   	bw = new BufferedWriter(fw); 
+   	pw = new PrintWriter(bw);
+   	pw.println("\n");
+   	pw.println("Enter the Roll Number:"+" \t "+ " Name:");
+	
+   	for(i=0;i<n;i++)
+	  	{
+   		System.out.println("Enter the Roll Number:"+" \t "+ " Name:");
+   		
+		rol[i]=sc.nextInt();
+	  	
+   		str[i]=sc.nextLine();
+	  	}
+	
+   		for(i=0;i<n;i++)
+	  	{
+	   	pw.println(rol[i]+"\t\t\t"+str[i]);  	
+
+   	}
+   	 
+
+   	
+  
+   
+   	System.out.println("Data Successfully Appended.........."); 
+   	pw.flush();
+   
+   	}
+   	catch (Exception io){
+   		System.out.println("error occured....");
+   	}
+   	
+
+   	}
+   	}
